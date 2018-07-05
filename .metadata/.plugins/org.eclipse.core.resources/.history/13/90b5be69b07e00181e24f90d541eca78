@@ -1,0 +1,20 @@
+package com.luv2code.springdemo;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class JavaPropConfigDemoApp {
+
+	public static void main(String[] args) {
+
+		AnnotationConfigApplicationContext context = new 
+				AnnotationConfigApplicationContext(SportConfig.class);
+		SwimCoach myCoach = context.getBean("swimCoach", SwimCoach.class);
+//		System.out.println(myCoach.getDailyWorkOut());
+//		System.out.println(myCoach.getDailyFortune());
+		
+		//call our new method
+		System.out.println("Email: "+myCoach.get);
+		context.close();
+	}
+
+}
